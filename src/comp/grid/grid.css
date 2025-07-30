@@ -4,12 +4,19 @@
 
 section {
   margin: 50px;
+  font-family: "Intel One Mono", monospace;
+  font-weight: 500;
+  font-style: normal;
+
+}
+.lable{
+  border-bottom: 2px solid black;
+  width: max-content;
 }
 
 .product-grid-container {
   display: flex;
   gap: 20px;
-  overflow-x: auto;
   padding: 10px;
 }
 
