@@ -1,0 +1,42 @@
+:root {
+  --txt: white;
+}
+
+section {
+  margin: 50px;
+}
+
+.product-grid-container {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  padding: 10px;
+}
+
+.product-card {
+  font-family: "Intel One Mono", monospace;
+  font-weight: 500;
+  font-style: normal;
+  background-color: #f9f9f9;
+  min-width: 250px;
+  text-align: center;
+}
+
+.pro1 {
+  height: 300px;
+  object-fit: cover;
+}
+
+.price {
+  margin: 5px 0;
+}
+
+.btn {
+  background-color: rgba(23, 23, 23, 0.584);
+  outline: none;
+  border: none;
+  padding: 10px 20px;
+  margin-top: 10px;
+  color: var(--txt);
+  cursor: pointer;
+}
