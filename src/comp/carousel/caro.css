@@ -1,31 +1,45 @@
 .caro {
   display: flex;
   flex-direction: row;
-  align-items: center; /* centers horizontally */
+  align-items: center;
+  justify-content: center; 
   gap: 20px;
   padding: 20px;
 }
 
-.caro div {
-  width: 80%;
-  max-width: 600px;
-  margin: 0 auto;
-  overflow: hidden;
-  box-shadow: 0 0px 12px rgba(51, 50, 50, 0.285);
+.caro .img-container {
+    margin: 0 20px;
 }
 
-.caro img {
-  width: 100%;
-  height: auto;
-  display: block;
-  height: 800px;
+.caro .img-container div{
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+
+}
+
+.caro .img-container div p{
+    bottom: -1px;
+    position: absolute;
+    width: calc(5 * 5vw);
+}
+
+.caro  img {
+    box-shadow: 0 0 30px rgba(70, 68, 68, 0.17);
+    width: 100%;
+    height: auto;
+    display: block;
+    height: calc(16 * 5vh);
 }
 
 @media (max-width: 1440px) {
 .caro {
-  display: flex;
   flex-direction: column;
  
+}
+
+.caro  img{
+    height: calc(10 * 5vh);
 }
 
 
