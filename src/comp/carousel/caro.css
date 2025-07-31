@@ -1,0 +1,32 @@
+.caro {
+  display: flex;
+  flex-direction: row;
+  align-items: center; /* centers horizontally */
+  gap: 20px;
+  padding: 20px;
+}
+
+.caro div {
+  width: 80%;
+  max-width: 600px;
+  margin: 0 auto;
+  overflow: hidden;
+  box-shadow: 0 0px 12px rgba(51, 50, 50, 0.285);
+}
+
+.caro img {
+  width: 100%;
+  height: auto;
+  display: block;
+  height: 800px;
+}
+
+@media (max-width: 1440px) {
+.caro {
+  display: flex;
+  flex-direction: column;
+ 
+}
+
+
+}
