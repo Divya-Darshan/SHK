@@ -1,0 +1,14 @@
+ body{
+    background-color: rgb(255, 255, 255);
+  font-family: "Intel One Mono", monospace;
+
+}
+
+.lable{
+  border-bottom: 3px solid black;
+  width: max-content;
+  font-weight: 500;
+  margin: 10px  0 0 5rem;
+  font-size:large;
+
+}
