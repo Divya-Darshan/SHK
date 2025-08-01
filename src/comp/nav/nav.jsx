@@ -1,19 +1,51 @@
 import './nav.css'
+import { useEffect } from 'react';
 
 function Nav() {
+  
+    useEffect(() => {
+    const navbar = document.getElementById('navbar');
+    const close_btn = document.getElementById('isclose');
+    const open_btn = document.getElementById('isopen');
+
+    window.openNav = () => {
+
+      open_btn.style.top = '-100px';
+      navbar.style.left = '0px'
+    };
+
+    window.closeNav = () => {
+
+      open_btn.style.top = '0px';
+      navbar.style.left = '-1000px'
+    };
+  }, []);
+
   return (
-    <nav className="navbar">
+    <>
+    <div className='ham-container'>
+
+    <button onClick={() => window.closeNav()} id='isclose' className='ham'><i class="ri-close-fill" /></button>
+    <button onClick={() => window.openNav()} id='isopen' className='ham'> <i class="ri-menu-3-line"/> </button>
+
+    </div>
+
+    <nav className="navbar" >
+    
       <div className="logo">SHK</div>
+      
       <span className="bar"></span>
-      <ul className="nav-links">
+    
+      <ul className="nav-links" id="navbar">
+    
         <li><a href="#">Mens</a></li>
         <li><a href="#">Womens</a></li>
         <li><a href="#">Kids</a></li>
+    
       </ul>
-      <div className='ham'>
-          <i class="ri-menu-3-line"></i>
-      </div>
+    
     </nav>
+    </>
   )
 }
 
