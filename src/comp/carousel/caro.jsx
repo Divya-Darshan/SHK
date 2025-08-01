@@ -4,9 +4,6 @@ function Caro() {
   return (
     <>
       <section>
-        <span className='lable'>
-          Shop Our Collections <i className="fa-solid fa-wand-magic-sparkles"></i>
-        </span>
         <div className="caro">
           <div className='img-container'>
             <img src="./img/mens.jpg" alt="Men's Collection" />

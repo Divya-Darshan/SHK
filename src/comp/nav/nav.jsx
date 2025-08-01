@@ -10,6 +10,9 @@ function Nav() {
         <li><a href="#">Womens</a></li>
         <li><a href="#">Kids</a></li>
       </ul>
+      <div className='ham'>
+          <i class="ri-menu-3-line"></i>
+      </div>
     </nav>
   )
 }

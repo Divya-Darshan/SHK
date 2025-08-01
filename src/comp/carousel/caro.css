@@ -10,14 +10,13 @@
 
 .caro .img-container {
   position: relative;
-  margin: 0 20px;
   overflow: hidden;
 }
 
 .caro img {
   box-shadow: 0 0 30px rgba(70, 68, 68, 0.17);
   width: 100%;
-  height: calc(16 * 5vh);
+  object-fit:scale-down;
   display: block;
 }
 
@@ -47,9 +46,5 @@
 @media (max-width: 1440px) {
   .caro {
     flex-direction: column;
-  }
-
-  .caro img {
-    height: calc(10 * 5vh);
   }
 }

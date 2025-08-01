@@ -1,56 +1,90 @@
-:root {
-  --txt: white;
+
+a{
+  text-decoration: none;
+  color: var(--txt) ;
 }
 
-.products {
-  margin: 50px;
-  font-family: "Intel One Mono", monospace;
-  font-weight: 500;
-  font-style: normal;
-  display: flex;
-  align-items: center;
+.grid-container{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, .2fr));
+
+  justify-content: center;
+  margin-left: 30px;
+}
+
+.info{
+  display: grid;
   justify-content: center;
 }
 
-.lable {
-  font-size: 24px;
-  margin: 20px 50px;
+
+.card{
+  width: 320px;
+    
 }
 
-.product-grid-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-  padding: 10px;
-  width: 100%;
-  max-width: 1200px;
+.card p{
+  margin: 20px;
+  font-weight: var(--weight);
 }
 
-.product-card {
-  font-family: "Intel One Mono", monospace;
-  font-weight: 500;
-  font-style: normal;
-  background-color: #f9f9f9;
-  text-align: center;
-  padding: 10px;
-}
-
-.pro1 {
-  width: 100%;
-  height: 300px;
-  object-fit: cover;
-}
-
-.price {
-  margin: 5px 0;
-}
-
-.btn {
-  background-color: rgba(23, 23, 23, 0.584);
+.card button{
+  color: var(--btn-txt);
+  margin: 20px;
   outline: none;
   border: none;
-  padding: 10px 20px;
-  margin-top: 10px;
-  color: var(--txt);
+  background-color: var(--btn);
+  padding: 15px 20px;
   cursor: pointer;
+
+}
+
+.card img{
+  width: 320px;
+
+}
+
+
+@media (max-width: 768px) {
+
+.grid-container{
+  grid-template-columns: repeat(2, minmax(250px, 1fr));
+  margin-left: 40px;
+}
+
+a{
+  width: 200px;
+}
+
+.card{
+  width: 200px;
+}
+
+.card img{
+  width: 200px;
+
+}
+
+}
+
+@media (max-width: 375px) {
+
+.grid-container{
+  grid-template-columns: repeat(2, minmax(250px, 1fr));
+  margin-left: 90px;
+}
+
+a{
+  width: 190px;
+}
+
+.card{
+  width: 190px;
+}
+
+.card img{
+  width: 190px;
+
+}
+
 }

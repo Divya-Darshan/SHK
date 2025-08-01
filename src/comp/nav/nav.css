@@ -1,11 +1,3 @@
-/* nav.css */
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 .bar{
     background-color: rgba(31, 31, 31, 0.228);
     height: 2pc;
@@ -16,10 +8,19 @@
 .navbar{
   background-color: #ffffff;
   color: rgb(32, 32, 32);
+  margin-bottom: 40px;
+}
+
+.ham{
+  position: absolute;
+  right: 0;
+  padding: 1px 2px;
+  margin-top: 2px;
+  margin-right: 20px;
+  transform: scale(2);
 }
 
 nav.navbar {
-  font-family: "Intel One Mono", monospace;
   font-optical-sizing: auto;
   font-weight: 500;
   font-style: normal;
@@ -56,6 +57,14 @@ nav.navbar {
 
 /* Responsive styles */
 @media (max-width: 768px) {
+  .bar{
+    display: none;
+  }
+
+  .nav-links{
+    display: none;
+  }
+
   nav.navbar {
     flex-direction: column;
     align-items: flex-start;
