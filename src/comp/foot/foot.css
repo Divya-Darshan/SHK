@@ -1,0 +1,49 @@
+.foot-container {
+  width: 100vw;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  justify-items: center;
+  border-top: 1px solid rgba(130, 129, 129, 0.415);
+  margin-top: 50px;
+  gap: 20px;
+}
+
+.foot-card {
+  padding: 20px;
+  text-align: center;
+}
+
+.foot-card p {
+  padding: 0 6rem;
+  color: rgba(93, 91, 91, 0.78);
+}
+
+.tip {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  grid-template-rows: repeat(auto-fit, minmax(100px, auto));
+  margin: 20px;
+}
+
+.icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.5rem;
+}
+
+.copyright{
+    font-size: x-large;
+
+}
+
+
+@media (max-width: 768px) {
+
+.foot-card p {
+  padding: 0 3rem;
+  color: rgba(93, 91, 91, 0.78);
+}
+
+}

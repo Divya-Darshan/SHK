@@ -20,30 +20,31 @@ function Grid() {
 
             {
               products.map((product) => (
-                <a href={product.src}>
+                
                   <div className='card'>
 
-                    <img src={product.src} alt="#" />
+                   <a href={product.src}> <img src={product.src} alt="#" /></a>
                     <div className='info'>
-                      <div>
+                      <a href={product.src}>
+                        <div>
 
-                        <p className='name'>
-                          {product.name}
-                        </p>
+                          <p className='name'>
+                            {product.name}
+                          </p>
 
-                        <p className='price'>
-                          {product.price}
-                        </p>
+                          <p className='price'>
+                            {product.price}
+                          </p>
 
-                      </div>
-                      
+                        </div>
+                      </a>
                       <button>
                         Add to Cart
                       </button>
                     </div>
                     
                   </div>
-                </a>
+   
               ))
             }
 

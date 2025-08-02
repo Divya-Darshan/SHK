@@ -4,6 +4,7 @@ function Caro() {
   return (
     <>
       <section>
+        <h3>Our Collections</h3>
         <div className="caro">
           <div className='img-container'>
             <img src="./img/mens.jpg" alt="Men's Collection" />
