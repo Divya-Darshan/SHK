@@ -38,10 +38,25 @@
 
 }
 
+.ri-map-pin-line{
+  font-size: 1.5rem;
+}
+
+.iframe-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 50px 0 0 0 ;
+}
+
 .loco{
   height: 500px;
-  width: 100vw;
-  box-shadow: 0 0 20px rgba(102, 102, 102, 0.446);
+  width: 80vw;
+  box-shadow: 10px 10px 0px rgb(0, 0, 0);
+  border-radius: 10px;
+  border: 2px solid black;
+  outline: none;
+
 }
 
 @media (max-width: 768px) {
