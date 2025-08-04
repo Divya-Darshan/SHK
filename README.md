@@ -48,7 +48,7 @@ harikrishna-textiles/
 ├── .eslintrc.cjs        # Linting rules
 ├── vite.config.js       # Vite configuration
 ├── package.json         # Project metadata and scripts
-└── README.md            # You're reading it
+└── README.md            # You're reading it 🫵😁
 ```
 
 ---
