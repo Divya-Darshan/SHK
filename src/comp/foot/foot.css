@@ -38,6 +38,11 @@
 
 }
 
+.loco{
+  height: 500px;
+  width: 100vw;
+  box-shadow: 0 0 20px rgba(102, 102, 102, 0.446);
+}
 
 @media (max-width: 768px) {
 

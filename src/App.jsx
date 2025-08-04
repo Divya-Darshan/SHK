@@ -10,6 +10,11 @@ function App() {
     <Nav/>
     <ForUGrid/>
     <Caro/>
+    <ForUGrid/>
+    <ForUGrid/>
+    <ForUGrid/>
+    <ForUGrid/>
+    <ForUGrid/>
     <Foot/>
     </>
   )

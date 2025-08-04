@@ -10,9 +10,6 @@ a{
   justify-content: center;
 }
 
-
-
-
 .card{
   width: 320px;
     
@@ -23,7 +20,11 @@ a{
   font-weight: var(--weight);
 }
 
-.card button{
+.ri-shopping-cart-line{
+  font-size: 1.2rem;
+}
+
+.card .btn{
 
   color: var(--btn-txt);
   margin: 20px;
@@ -33,7 +34,15 @@ a{
   padding: 15px 20px;
   cursor: pointer;
 
+
 }
+
+
+.card .btn :hover{
+  color: aqua;
+}
+
+
 
 .info{
   position: relative;
