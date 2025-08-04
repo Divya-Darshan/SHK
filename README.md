@@ -2,6 +2,12 @@
 
 An e-commerce platform built for **Harikrishna Textiles**, allowing users to browse, order, and receive fabric products online—similar in functionality to Amazon but focused on textile and clothing materials. This modern web application provides a seamless shopping experience optimized for performance and scalability.
 
+## 🚀 Deployment Status
+
+
+✅ Hosted on **Netlify** — Continuous Deployment from `main` branch :
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/4d18b763-b6f6-4cd6-a206-d1fe6a94a9ec/deploy-status)](https://app.netlify.com/sites/shkfabrics/deploys)  
 
 ---
 
