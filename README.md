@@ -18,7 +18,7 @@ An e-commerce platform built for **Harikrishna Textiles**, allowing users to bro
 | **Frontend**| [React](https://reactjs.org/), [Vite](https://vitejs.dev/)                 |
 | **Backend** | [Node.js](https://nodejs.org/)                                              |
 | **Deployment** | [Netlify](https://www.netlify.com/)                                     |
-| **Styling** | CSS, Tailwind CSS, Bootstrap               |
+| **Styling**     | [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS), [Tailwind CSS](https://tailwindcss.com/), [Bootstrap](https://getbootstrap.com/) |
 | **APIs / DB** | *(Add if applicable — e.g., Express, MongoDB, Firebase, etc.)*           |
 
 
