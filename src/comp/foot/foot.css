@@ -1,7 +1,7 @@
 .foot-container {
   width: 100vw;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 4fr));
   justify-items: center;
   border-top: 1px solid rgba(130, 129, 129, 0.415);
   margin-top: 50px;
@@ -9,7 +9,7 @@
 }
 
 .foot-card {
-  padding: 20px;
+  padding: 10px;
   text-align: center;
 }
 
