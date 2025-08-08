@@ -38,7 +38,8 @@ function Nav() {
     
       <ul className="nav-links" id="navbar">
     
-        <li><a href="#">Mens</a></li>
+        <li><a href="mens.html">Mens</a></li>
+  
         <li><a href="#">Womens</a></li>
         <li><a href="#">Kids</a></li>
     
