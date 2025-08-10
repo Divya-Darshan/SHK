@@ -3,9 +3,11 @@ import "./slider.css";
 
 function Slider() {
   const images = [
-    "./img/h.jpg",
-    "./img/w.jpg",
-
+    "./img/h.png",
+    "./img/w.png",
+    "./img/h.png",
+    "./img/w.png",
+  
   ];
 
   const [current, setCurrent] = useState(0);
@@ -20,14 +22,14 @@ function Slider() {
 
   // Auto-play every 3 seconds
   useEffect(() => {
-    const timer = setInterval(nextSlide, 3000);
+    const timer = setInterval(nextSlide, 4000);
     return () => clearInterval(timer);
   }, []);
 
   return (
     <div className="slider">
       <button className="prev" onClick={prevSlide}>❮</button>
-      
+
       {images.map((src, index) => (
         <img
           key={index}
@@ -38,6 +40,17 @@ function Slider() {
       ))}
 
       <button className="next" onClick={nextSlide}>❯</button>
+
+    
+      <div className="dots">
+        {images.map((_, index) => (
+          <span
+            key={index}
+            className={`dot ${index === current ? "active-dot" : ""}`}
+            onClick={() => setCurrent(index)}
+          ></span>
+        ))}
+      </div>
     </div>
   );
 }

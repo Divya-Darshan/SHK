@@ -36,7 +36,7 @@ nav.navbar {
   display: flex;
   justify-content: unset;
   align-items: center;
-  padding: 16px 32px;
+  padding: 0px 32px;
 
 }
 
