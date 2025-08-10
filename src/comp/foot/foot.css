@@ -11,10 +11,12 @@
 .foot-card {
   padding: 10px;
   text-align: center;
+  font-weight: 600;
 }
 
 .foot-card p {
   padding: 0 6rem;
+  font-weight: 600;
   color: rgba(93, 91, 91, 0.78);
 }
 
@@ -30,17 +32,16 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  font-weight: 600;
   font-size: 2.5rem;
 }
 
 .copyright{
-    font-size: x-large;
-
+  padding: 20px;
+  font-size: large;  
 }
 
-.ri-map-pin-line{
-  font-size: 1.5rem;
-}
+
 
 .iframe-container{
   display: flex;
@@ -65,5 +66,11 @@
   padding: 0 3rem;
   color: rgba(93, 91, 91, 0.78);
 }
+
+.copyright{
+  padding: 20px;
+  font-size: 3vw;
+}
+
 
 }

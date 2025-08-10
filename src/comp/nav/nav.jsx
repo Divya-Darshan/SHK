@@ -1,5 +1,7 @@
 import './nav.css'
 import { useEffect } from 'react';
+import { Link } from 'react-router-dom';
+
 
 function Nav() {
   
@@ -32,7 +34,7 @@ function Nav() {
 
     <nav className="navbar" >
     
-      <div className="logo">SHK</div>
+      <div className="logo"><Link to="/">SHK</Link></div>
       
       <span className="bar"></span>
     
