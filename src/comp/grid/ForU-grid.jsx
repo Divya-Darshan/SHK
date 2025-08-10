@@ -1,6 +1,7 @@
-import './grid.css';
-import { useMemo } from 'react';
 import { products } from '../../data/products';
+import { useMemo } from 'react';
+import { Link } from 'react-router-dom';
+import './grid.css'
 
 function Grid() {
   const shuffledProducts = useMemo(() => {
@@ -16,22 +17,26 @@ function Grid() {
     <section>
       <h3>For You <i className="ri-arrow-right-up-line"></i></h3>
       <div className="grid-container">
-        {
-          shuffledProducts.map((product) => (
-            <div key={product.id} className='card'>
-              <a href={product.anchor}> <img src={product.src} alt={product.name} /></a>
+        {shuffledProducts.map((product) => {
+          const index = products.findIndex(p => p.src === product.src);
+          return (
+            <div key={product.id + '-' + index} className='card'>
+              {/* Pass index as param in URL */}
+              <Link to={`/product/${index}`}>
+                <img src={product.src} alt={product.name} />
+              </Link>
               <div className='info'>
-                <a href={product.anchor}>
+                <Link to={`/product/${index}`}>
                   <div>
                     <p className='name'>{product.name}</p>
                     <p className='price'>{product.price}</p>
                   </div>
-                </a>
+                </Link>
                 <button className='btn'>Add to Cart <i className="ri-shopping-cart-line"></i></button>
               </div>
             </div>
-          ))
-        }
+          )
+        })}
       </div>
     </section>
   );
