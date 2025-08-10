@@ -6,7 +6,7 @@ function Slider() {
     "./img/h.png",
     "./img/w.png",
     "./img/h.png",
-    "./img/w.png",
+    "./img/w.png", 
   
   ];
 
