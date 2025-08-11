@@ -5,10 +5,41 @@
     margin:20px ;
 }
 
+#login,#signup{
+  color: var(--btn-txt);
+  outline: none;
+  border: none;
+  background-color: var(--btn);
+  padding: 15px 20px;
+  cursor: pointer;
+  margin: 10px;
+  float: right;
+  position: relative;
+  right: 50px;
+  
+}
+
+#cart{
+  outline: none;
+  border: none;
+  font-size: x-large;
+  padding: 8px 10px;
+  cursor: pointer;
+  margin: 10px;
+  float: right;
+  position: relative;
+  right: 50px;
+  box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.38);
+}
+
+
 .navbar{
   background-color: #ffffff;
   color: rgb(32, 32, 32);
+  transition: 1s ease-in-out;
 }
+
+
 
 .ham{
   position: absolute;
@@ -20,8 +51,7 @@
   border: none;
   color: black;
   cursor: pointer;
-  transition: .6s;
-
+  transition: 1s;
 }
 
 .ham-container{
