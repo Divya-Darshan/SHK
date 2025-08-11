@@ -17,9 +17,10 @@ Hosted on **Netlify** — Continuous Deployment from `main` branch :
 |-------------|-----------------------------------------------------------------------------|
 | **Frontend**| [React](https://reactjs.org/), [Vite](https://vitejs.dev/)                 |
 | **Backend** | [Node.js](https://nodejs.org/)                                              |
-| **Deployment** | [Netlify](https://www.netlify.com/)                                     |
 | **Styling**     | [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS), [Bootstrap](https://getbootstrap.com/) |
-| **APIs / DB** | *(Add if applicable — e.g., Express, MongoDB, Firebase, etc.)*           |
+| **Deployment** | [Netlify](https://www.netlify.com/)                                     |
+| Oauth         |  [Firebase](https://firebase.google.com/)
+| **APIs / DB** | -          |
 
 
 ---
