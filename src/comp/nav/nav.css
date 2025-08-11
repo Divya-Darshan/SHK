@@ -81,7 +81,7 @@ nav.navbar {
   nav.navbar {
     flex-direction: column;
     align-items: flex-start;
-    margin-top: 10px ;
+    margin: 20px 0 20px 0; ;
   }
 
   .nav-links {
@@ -92,7 +92,7 @@ nav.navbar {
   }
 
   .nav-links li {
-    padding: 8px 0;
+    
     width: 100%;
   }
 }

@@ -3,10 +3,10 @@ import "./slider.css";
 
 function Slider() {
   const images = [
-    "./img/h.png",
-    "./img/w.png",
-    "./img/h.png",
-    "./img/w.png", 
+    "./img/slider/bts.png",
+    "./img/slider/50off.jpg",
+    "./img/slider/fas.jpg",
+    "./img/slider/we.jpg", 
   
   ];
 
@@ -22,7 +22,7 @@ function Slider() {
 
   // Auto-play every 3 seconds
   useEffect(() => {
-    const timer = setInterval(nextSlide, 4000);
+    const timer = setInterval(nextSlide, 5000);
     return () => clearInterval(timer);
   }, []);
 
