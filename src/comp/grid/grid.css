@@ -78,7 +78,7 @@ a{
 }
 
 .card img{
-  width: 200px;
+  width: 180px;
 
 }
 
@@ -89,6 +89,7 @@ a{
 .grid-container{
   grid-template-columns: repeat(2, minmax(190px, 1fr));
   overflow: hidden;
+  margin: 10px;
 }
 
 a{
@@ -100,7 +101,34 @@ a{
 }
 
 .card img{
-  width: 190px;
+  width: 180px;
+
+}
+
+}
+
+@media (max-width: 320px) {
+
+.grid-container{
+  grid-template-columns: repeat(2, minmax(150px, 1fr));
+  overflow: hidden;
+  margin: 8px;
+}
+
+.card img{
+  width: 150px;
+}
+
+.card .btn{
+
+  color: var(--btn-txt);
+  margin: 10px;
+  outline: none;
+  border: none;
+  background-color: var(--btn);
+  padding: 15px 20px;
+  cursor: pointer;
+
 
 }
 
