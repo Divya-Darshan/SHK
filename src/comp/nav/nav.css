@@ -5,17 +5,18 @@
     margin:20px ;
 }
 
-#login,#signup{
-  color: var(--btn-txt);
+#login{
+  color: black;
   outline: none;
   border: none;
-  background-color: var(--btn);
+  background-color: transparent;
+  font-weight: 600;
   padding: 15px 20px;
   cursor: pointer;
   margin: 10px;
   float: right;
   position: relative;
-  right: 50px;
+  right: 40px;
   
 }
 
@@ -79,7 +80,7 @@
   margin:  5px 10px;
   float: right;
   position: relative;
-  right: 50px;
+  right: 40px;
   background-color: transparent;
 }
 
@@ -95,14 +96,13 @@
 .ham{
   position: absolute;
   right: 0;
-
   margin-top: 22px;
   margin-right: 20px;
-  transform: scale(3.1);
+  transform: scale(2);
   border: none;
   color: black;
   cursor: pointer;
-  transition: 1s;
+  transition: 500ms ease-in-out;
 }
 
 .ham-container{
@@ -157,6 +157,17 @@ nav.navbar {
    display: flex; 
   }
 
+  .ham{
+  position: absolute;
+  right: 0;
+  margin-top: 22px;
+  margin-right: 20px;
+  transform: scale(2);
+  border: none;
+  color: black;
+  cursor: pointer;
+  transition: 500ms ease-in-out;
+}
   
 
   nav.navbar {

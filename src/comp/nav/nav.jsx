@@ -59,7 +59,7 @@ function Nav() {
           <i className="ri-close-fill" />
         </button>
         <button onClick={() => window.openNav()} id='isopen' className='ham'>
-          <i className="ri-menu-3-line" />
+          <i class="ri-menu-fold-line"></i>
         </button>
       </div>
 
