@@ -77,9 +77,14 @@ function Nav() {
               <img src={user.photoURL} alt="profile" className="profile-pic" />
             </button>
             {dropdownOpen && (
-              <div className="dropdown-menu">
-                <span className="username">{user.displayName}</span>
-                <button onClick={Logout} className="logout-btn">Logout</button>
+              < div className="dropdown">
+              
+                <div className="dropdown-menu">
+                  <span className="username">{user.displayName}</span>
+                  <br />
+                  <button onClick={Logout} className="logout-btn">Logout</button>
+                </div>
+
               </div>
             )}
           </div>
@@ -88,7 +93,7 @@ function Nav() {
         )}
 
         
-        <button id='cart'><i className="ri-shopping-cart-2-line"></i></button>
+        <button id='cart'><i class="ri-shopping-cart-line"></i></button>
       </div>
 
       <nav className="navbar">
