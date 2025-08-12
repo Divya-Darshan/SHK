@@ -9,7 +9,7 @@ function Nav() {
   const [user, setUser] = useState(null);
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
-  // Check if user is logged in
+  // Track login state
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
@@ -36,7 +36,7 @@ function Nav() {
     }
   }
 
-  // Navbar open/close logic
+  // Navbar animation
   useEffect(() => {
     const navbar = document.getElementById('navbar');
     const open_btn = document.getElementById('isopen');
@@ -52,6 +52,20 @@ function Nav() {
     };
   }, []);
 
+  // Dropdown animation
+  useEffect(() => {
+    const dropdown = document.getElementById('profile-dropdown');
+    if (dropdown) {
+      if (dropdownOpen) {
+        dropdown.style.top = '60px';
+        dropdown.style.opacity = '1';
+      } else {
+        dropdown.style.top = '30px';
+        dropdown.style.opacity = '0';
+      }
+    }
+  }, [dropdownOpen]);
+
   return (
     <>
       <div className='ham-container'>
@@ -59,15 +73,11 @@ function Nav() {
           <i className="ri-close-fill" />
         </button>
         <button onClick={() => window.openNav()} id='isopen' className='ham'>
-          <i class="ri-menu-fold-line"></i>
+          <i className="ri-menu-fold-line"></i>
         </button>
       </div>
 
-
-
-
       <div className='login-container'>
-
         {user ? (
           <div className="user-info">
             <button
@@ -76,24 +86,35 @@ function Nav() {
             >
               <img src={user.photoURL} alt="profile" className="profile-pic" />
             </button>
-            {dropdownOpen && (
-              < div className="dropdown">
-              
-                <div className="dropdown-menu">
-                  <span className="username">{user.displayName}</span>
-                  <br />
-                  <button onClick={Logout} className="logout-btn">Logout</button>
-                </div>
 
+            <div
+              id="profile-dropdown"
+              className="dropdown-menu"
+              style={{
+                position: 'absolute',
+                right: '0px',
+                background: 'white',
+                padding: '10px',
+                transition: 'all 0.3s ease',
+                opacity: 0,
+                top: '30px',
+                pointerEvents: dropdownOpen ? 'auto' : 'none'
+              }}
+            >
+              <div className="user-details"> 
+                <span className="username">Hi,{user.displayName}</span>
+                <br /><br />
+                <span className="email">{user.email}</span>
+                <br /><br />
+                <button onClick={Logout} className="logout-btn">Logout</button>
               </div>
-            )}
+            </div>
           </div>
         ) : (
           <button id='login' onClick={Login}>Login</button>
         )}
 
-        
-        <button id='cart'><i class="ri-shopping-cart-line"></i></button>
+        <button id='cart'><i class="ri-shopping-bag-3-line"></i></button>
       </div>
 
       <nav className="navbar">
