@@ -19,6 +19,19 @@
   
 }
 
+
+.profile-pic {
+  width: 40px;
+  height: auto;
+  border-radius: 50%;
+}
+
+.profile-btn{
+  float: right;
+  margin: 10px;
+}
+
+
 #cart{
   outline: none;
   border: none;
