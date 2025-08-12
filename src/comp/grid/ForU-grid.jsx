@@ -32,7 +32,7 @@ function Grid() {
                     <p className='price'>{product.price}</p>
                   </div>
                 </Link>
-                <button className='btn'>Add to Cart <i className="ri-shopping-cart-line"></i></button>
+                <button className='btn'>Add to Bag</button>
               </div>
             </div>
           )

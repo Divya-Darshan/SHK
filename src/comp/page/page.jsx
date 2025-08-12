@@ -1,6 +1,7 @@
 import { useParams } from 'react-router-dom';
 import { products } from '../../data/products';
 import Grid from '../grid/ForU-grid'
+import Foot from '../foot/foot';
 import './page.css';
 
 function Page() {
@@ -30,6 +31,7 @@ function Page() {
       </section>
 
       <Grid />
+      <Foot />
     </>
   );
 }
