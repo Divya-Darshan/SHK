@@ -1,5 +1,6 @@
 
 
+
 .grid-container{
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(350px, .1fr));
@@ -84,12 +85,15 @@ a{
 
 }
 
+
+
 @media (max-width: 375px) {
 
 .grid-container{
   grid-template-columns: repeat(2, minmax(190px, 1fr));
   overflow: hidden;
   margin: 10px;
+  position: static;
 }
 
 a{
@@ -107,12 +111,15 @@ a{
 
 }
 
+
+
 @media (max-width: 320px) {
 
 .grid-container{
   grid-template-columns: repeat(2, minmax(150px, 1fr));
   overflow: hidden;
   margin: 8px;
+  left: none;
 }
 
 .card img{
@@ -133,3 +140,10 @@ a{
 }
 
 }
+
+@media (min-width: 321px) and (max-width: 400px) {
+  .grid-container {
+    left: 10px;
+  }
+}
+
