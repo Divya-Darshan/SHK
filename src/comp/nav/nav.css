@@ -13,7 +13,7 @@
   font-weight: 600;
   padding: 15px 20px;
   cursor: pointer;
-  margin: 10px;
+  margin-top: 5px;
   float: right;
   position: relative;
   right: 40px;
@@ -78,7 +78,7 @@
   font-size: x-large;
   padding: 8px 10px;
   cursor: pointer;
-  margin:  5px 10px;
+  margin-top: 5px;
   float: right;
   position: relative;
   right: 60px;
@@ -175,7 +175,7 @@ nav.navbar {
 }
 
 #cart{
-  right: 50px;
+  right: 40px;
 }
   
 
@@ -203,6 +203,7 @@ nav.navbar {
     width: 100%;
   }
 }
+
 
 
 

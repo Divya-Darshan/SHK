@@ -16,6 +16,7 @@ function Grid() {
   return (
     <section>
       <h3>For You <i className="ri-arrow-right-up-line"></i></h3>
+      <div className='grid-wrapper'>
       <div className="grid-container">
         {shuffledProducts.map((product) => {
           const index = products.findIndex(p => p.src === product.src);
@@ -38,6 +39,8 @@ function Grid() {
           )
         })}
       </div>
+      </div>
+
     </section>
   );
 }
