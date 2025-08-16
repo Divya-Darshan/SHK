@@ -19,7 +19,7 @@ Hosted on **Netlify** — Continuous Deployment from `main` branch :
 | **Backend** | [Node.js](https://nodejs.org/)                                              |
 | **Styling**     | [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS), [Bootstrap](https://getbootstrap.com/) |
 | **Deployment** | [Netlify](https://www.netlify.com/)                                     |
-| Oauth         |  [Firebase](https://firebase.google.com/)
+| **Oauth**         |  [Firebase](https://firebase.google.com/)
 | **APIs / DB** | -          |
 
 
