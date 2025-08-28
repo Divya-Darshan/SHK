@@ -5,7 +5,7 @@ import Caro from "./comp/carousel/caro";
 import Foot from "./comp/foot/foot";
 import Slider from "./comp/slider/slider";
 import Page from "./comp/page/page";
-import OurGrid from "./comp/grid/our-grid";
+import OurGrid from "./comp/grid/Our-grid";
 import { CartProvider } from "./context/CartContext";
 import "./App.css";
 
