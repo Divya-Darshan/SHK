@@ -1,0 +1,76 @@
+.foot-container {
+  width: 100vw;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 4fr));
+  justify-items: center;
+  border-top: 1px solid rgba(130, 129, 129, 0.415);
+  margin-top: 50px;
+  gap: 20px;
+}
+
+.foot-card {
+  padding: 10px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.foot-card p {
+  padding: 0 6rem;
+  font-weight: 600;
+  color: rgba(93, 91, 91, 0.78);
+}
+
+.tip {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  grid-template-rows: repeat(auto-fit, minmax(100px, auto));
+  margin: 20px;
+}
+
+.icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+  font-size: 2.5rem;
+}
+
+.copyright{
+  padding: 20px;
+  font-size: large;  
+}
+
+
+
+.iframe-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 50px 0 0 0 ;
+}
+
+.loco{
+  height: 500px;
+  width: 80vw;
+  box-shadow: 10px 10px 0px rgb(0, 0, 0);
+  border-radius: 10px;
+  border: 2px solid black;
+  outline: none;
+
+}
+
+@media (max-width: 768px) {
+
+.foot-card p {
+  padding: 0 3rem;
+  color: rgba(93, 91, 91, 0.78);
+}
+
+.copyright{
+  padding: 20px;
+  font-size: 3vw;
+}
+
+
+}
