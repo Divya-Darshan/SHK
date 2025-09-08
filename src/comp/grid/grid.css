@@ -96,7 +96,7 @@ a{
 }
 
 .card{
-  width: 200px;
+  width: max-content;
   border: none;
 }
 
