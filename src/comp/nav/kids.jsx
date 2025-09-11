@@ -26,7 +26,7 @@ function Man() {
 
       return newList;
     });
-  };
+  };     //hello
 
   return (
     <section>
