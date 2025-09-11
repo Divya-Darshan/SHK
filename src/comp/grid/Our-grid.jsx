@@ -10,9 +10,13 @@ function OurGrid() {
     setLoadedImages((prev) => ({ ...prev, [id]: true }));
   };
 
+
+
   return (
     <section>
-      <h3>Our Collection <i className="ri-shirt-line"></i></h3>
+      <h3>
+        Our Collection <i className="ri-shirt-line"></i>
+      </h3>
       <div className='grid-wrapper'>
         <div className="grid-container">
           {products.map((product, index) => (
@@ -34,7 +38,7 @@ function OurGrid() {
                     <p className='price'>{product.price}</p>
                   </div>
                 </Link>
-                <button className='btn'>Add to Bag</button>
+
               </div>
             </div>
           ))}
