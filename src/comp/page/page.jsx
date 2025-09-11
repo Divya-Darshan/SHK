@@ -1,6 +1,8 @@
-// src/comp/page/Page.jsx  (or wherever your Page component file is)
+// src/comp/page/Page.jsx
 import { useParams } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { collection, addDoc } from "firebase/firestore";
+import { db } from "../../firebase/Auth-config"; // Firestore import
 import { products } from "../../data/products";
 import Grid from "../grid/ForU-grid";
 import Foot from "../foot/foot";
@@ -13,29 +15,42 @@ function Page() {
   const [loaded, setLoaded] = useState(false);
   const [showQR, setShowQR] = useState(false);
   const [copied, setCopied] = useState(false);
+  const [showPopup, setShowPopup] = useState(false);
+
+  // New states for Firestore
+  const [name, setName] = useState("");
+  const [address, setAddress] = useState("");
+  const [quantity, setQuantity] = useState(1);
+  const [message, setMessage] = useState("");
+  const [saving, setSaving] = useState(false);
+  const [phone, setPhone] = useState("");
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [index]);
 
   const product =
     !isNaN(productIndex) && productIndex >= 0 && productIndex < products.length
       ? products[productIndex]
       : products[0];
 
-  // parse price to numeric amount (fallback to 1 if invalid)
+  // parse price to numeric amount
   const rawAmount = String(product.price || "").replace(/[₹,\s]/g, "");
   let amount = parseFloat(rawAmount);
   if (isNaN(amount) || amount <= 0) amount = 1;
 
-  // YOUR UPI details (you gave these)
+  // UPI details
   const upiId = "paytmqr6ozrdm@ptys";
   const payeeName = "SRIHARIKRISHNATEXTIL";
 
-  // Build UPI link (encoded)
+  // Build UPI link
   const upiLink = `upi://pay?pa=${encodeURIComponent(
     upiId
   )}&pn=${encodeURIComponent(payeeName)}&am=${encodeURIComponent(
-    amount.toString()
+    (amount * quantity).toString()
   )}&cu=INR`;
 
-  // QR service (no lib install required)
+  // QR service
   const qrUrl = `https://api.qrserver.com/v1/create-qr-code/?data=${encodeURIComponent(
     upiLink
   )}&size=300x300`;
@@ -43,16 +58,47 @@ function Page() {
   // detect mobile
   const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 
-  const handleUPIPay = () => {
-    if (isMobile) {
-      // Try open UPI app
-      window.location.href = upiLink;
-      // Note: some banks/apps may show their own error for recipient limits — that's outside JS control.
-    } else {
-      // Desktop -> show QR fallback
-      setShowQR(true);
+  // New function: Save order to Firestore
+  const saveOrderToFirestore = async () => {
+    setSaving(true);
+    setMessage("");
+    try {
+      const docRef = await addDoc(collection(db, "orders"), {
+        productName: product.name,
+        price: amount,
+        quantity: quantity,
+        totalAmount: amount * quantity,
+        name: name || "Anonymous",
+        address: address || "Not provided",
+        date: new Date().toLocaleDateString(),
+        status: "Pending",
+      });
+      console.log("✅ Firestore order saved, ID:", docRef.id);
+      setMessage("✅ Order saved successfully!");
+    } catch (error) {
+      console.error("❌ Firestore write error:", error.code, error.message);
+      setMessage(`❌ Error saving order: ${error.message}`);
+      throw error; // stop payment if save failed
+    } finally {
+      setSaving(false);
     }
   };
+
+const handleUPIPay = () => {
+  if (!name || !address || !phone || quantity < 1) {
+    setMessage("❌ Please fill all fields and set quantity ≥ 1.");
+    return;
+  }
+
+
+  // ❌ Remove Firestore saving from here
+  if (isMobile) {
+    window.location.href = upiLink;
+  } else {
+    setShowQR(true);
+  }
+};
+
 
   const handleCopyUPI = async () => {
     try {
@@ -63,6 +109,57 @@ function Page() {
       console.error("Copy failed", err);
     }
   };
+
+  // Timer logic: hide QR after 15s and show popup
+  useEffect(() => {
+    let timer;
+    if (showQR) {
+      timer = setTimeout(() => {
+        setShowQR(false);
+        setShowPopup(true);
+      }, 15000);
+    }
+    return () => clearTimeout(timer);
+  }, [showQR]);
+
+const handlePopupResponse = async (response) => {
+  setShowPopup(false);
+  if (response === "yes") {
+    try {
+      setSaving(true);
+      setMessage("");
+
+      // 🔹 Save order to Firestore here
+const docRef = await addDoc(collection(db, "orders"), {
+  productName: product.name,
+  price: amount,
+  quantity: quantity,
+  totalAmount: amount * quantity,
+  name: name || "Anonymous",
+  address: address || "Not provided",
+  phone: phone || "Not provided", // ✅ added
+  date: new Date().toLocaleDateString(),
+  status: "Paid",
+});
+
+
+      console.log("✅ Firestore order saved, ID:", docRef.id);
+      setMessage("✅ Payment confirmed and order saved!");
+      setName("");
+      setAddress("");
+    } catch (error) {
+      console.error("❌ Firestore write error:", error.code, error.message);
+      setMessage(`❌ Error saving order: ${error.message}`);
+    } finally {
+      setSaving(false);
+    }
+
+    alert("✅ Thank you! Payment confirmed.");
+  } else {
+    alert("❌ Payment not completed. Please try again.");
+  }
+};
+
 
   return (
     <>
@@ -84,22 +181,57 @@ function Page() {
             This is a high quality {product.name} from Harikrishna Textiles.
           </p>
 
-          {/* UPI payment button (mobile opens app, desktop shows QR) */}
+          {/* NEW: User input fields */}
+          <div style={{ marginTop: 16, display: "flex", flexDirection: "column", gap: 8 }}>
+            <input
+              type="text"
+
+              placeholder="Enter Name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              className="border p-2 rounded"
+            />
+                        <input
+              type="number"
+              placeholder="Enter Phone Number"
+              value={phone}
+              onChange={(e) => setPhone(e.target.value)}
+              className="border p-2 rounded"
+            />
+
+            <input
+              type="text"
+              placeholder="Enter Address"
+              value={address}
+              onChange={(e) => setAddress(e.target.value)}
+              className="border p-2 rounded"
+            />
+            <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
+              <label>Quantity:</label>
+              <input
+                type="number"
+                min="1"
+                value={quantity}
+                onChange={(e) => setQuantity(parseInt(e.target.value, 10) || 1)}
+                className="border p-2 rounded w-20"
+              />
+            </div>
+          </div>
+
+          {message && (
+            <p style={{ marginTop: 12, color: message.startsWith("❌") ? "red" : "green" }}>
+              {message}
+            </p>
+          )}
+
+          {/* UPI payment button */}
           <div style={{ marginTop: 16 }}>
             <button
               onClick={handleUPIPay}
-              className="btn btn-buy-now"
-              style={{
-                background: "#0b6623",
-                color: "#fff",
-                padding: "10px 16px",
-                border: "none",
-                borderRadius: 8,
-                cursor: "pointer",
-                fontWeight: "600",
-              }}
+              className="btn-confirm btn-buy-now"
+              disabled={saving}
             >
-              Pay ₹{amount} with UPI
+              {saving ? "Saving order..." : `Pay ₹${amount * quantity} with UPI`}
             </button>
           </div>
 
@@ -166,19 +298,9 @@ function Page() {
                       color: "#111",
                       display: "inline-block",
                     }}
-                    onClick={() => {
-                      /* On desktop some browsers will try to open an app. This is OK as a fallback. */
-                    }}
                   >
                     Open UPI (if phone supports)
                   </a>
-                </div>
-
-                <div style={{ marginTop: 12, color: "#666", fontSize: 13 }}>
-                  If you are on mobile and the "Pay" button shows an error like
-                  "exceeded bank limit", that is a bank/UPI-app restriction —
-                  try another UPI ID or test with a different UPI app. This
-                  fallback QR & copy option ensures customers can still pay.
                 </div>
               </div>
             </div>
@@ -186,7 +308,64 @@ function Page() {
         </div>
       </section>
 
-      {/* keep the rest of your page */}
+      {/* Payment confirmation popup */}
+      {showPopup && (
+        <div
+          style={{
+            position: "fixed",
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            background: "rgba(0,0,0,0.5)",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            zIndex: 1000,
+          }}
+        >
+          <div
+
+                className="order-panel open"
+          >
+            <h3  style={{
+                  fontFamily: "Arial, Helvetica, sans-serif",
+                }} 
+                
+                >Did you complete your payment?</h3>
+            <div style={{ marginTop: 16, display: "flex", gap: 12, justifyContent: "center" }}>
+              <button
+                onClick={() => handlePopupResponse("yes")}
+                style={{
+                  padding: "8px 12px",
+                  borderRadius: 6,
+                  border: "none",
+                  background: "#4caf50",
+                  color: "#fff",
+                  cursor: "pointer",
+                }}
+              >
+                Yes
+              </button>
+              <button
+                onClick={() => handlePopupResponse("no")}
+                style={{
+                  padding: "8px 12px",
+                  borderRadius: 6,
+                  border: "none",
+                  background: "#f44336",
+                  color: "#fff",
+                  cursor: "pointer",
+                }}
+              >
+                No
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Keep the rest of your page */}
       <Grid />
       <Foot />
     </>

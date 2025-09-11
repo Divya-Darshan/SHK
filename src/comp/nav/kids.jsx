@@ -6,7 +6,7 @@ import './man.css';
 
 function Man() {
   // Filter only men category products
-  const menProducts = products.filter((p) => p.category === 'men');
+  const menProducts = products.filter((p) => p.category === 'kids');
 
   const [visibleProducts, setVisibleProducts] = useState(menProducts);
 
@@ -18,7 +18,7 @@ function Man() {
       const clicked = prev[index];
       const remaining = prev.filter((p) => p.id !== productId);
 
-      // put clicked one back at a random later position
+      // put clicked one back at a random later positiondon t konw why
       if (remaining.length === 0) return prev;
       const insertPos = Math.floor(Math.random() * (remaining.length - 1)) + 1;
       const newList = [...remaining];
@@ -26,11 +26,11 @@ function Man() {
 
       return newList;
     });
-  };
+  };     //hello
 
   return (
     <section>
-      <h3>Men <i className="ri-arrow-right-up-line"></i></h3>
+      <h3>Kides <i className="ri-arrow-right-up-line"></i></h3>
       <div className='grid-wrapper'>
         <div className="grid-container">
           {visibleProducts.map((product, index) => (

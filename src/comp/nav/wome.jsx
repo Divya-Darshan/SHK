@@ -6,7 +6,7 @@ import './man.css';
 
 function Man() {
   // Filter only men category products
-  const menProducts = products.filter((p) => p.category === 'men');
+  const menProducts = products.filter((p) => p.category === 'women');
 
   const [visibleProducts, setVisibleProducts] = useState(menProducts);
 
@@ -30,7 +30,7 @@ function Man() {
 
   return (
     <section>
-      <h3>Men <i className="ri-arrow-right-up-line"></i></h3>
+      <h3>Women <i className="ri-arrow-right-up-line"></i></h3>
       <div className='grid-wrapper'>
         <div className="grid-container">
           {visibleProducts.map((product, index) => (
