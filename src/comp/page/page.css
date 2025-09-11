@@ -112,6 +112,11 @@
   object-fit: contain;
 }
 
+.gpay-button {
+  margin-top: 20px;
+  width: 100%;
+}
+
 .product-info {
   width: 50%;
   display: flex;
