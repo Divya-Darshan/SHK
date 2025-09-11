@@ -50,7 +50,6 @@ function ForYouGrid() {
                       <p className='price'>{product.price}</p>
                     </div>
                   </Link>
-                  <button className='btn'>Buy Now</button>
                 </div>
               </div>
           ))}

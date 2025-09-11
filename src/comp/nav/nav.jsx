@@ -6,7 +6,8 @@ import { signInWithPopup, signOut, onAuthStateChanged } from 'firebase/auth';
 import { auth, googleAuthProvider } from '../../firebase/Auth-config';
 import { Routes, Route } from 'react-router-dom';
 import Man from './Man';  // already imported
-
+import Women from './wome';
+import Kids from './kids';
 
 function Nav() {
   const [user, setUser] = useState(null);
@@ -125,13 +126,15 @@ function Nav() {
         <span className="bar"></span>
         <ul className="nav-links" id="navbar">
           <li><Link to="/men">Mens</Link></li>
-          <li><Link to="/women">Womens</Link></li>
+          <li><Link to="/wome">Womens</Link></li>
           <li><Link to="/kids">Kids</Link></li>
         </ul>
       </nav>
 
           <Routes>
           <Route path="/men" element={<Man />} />
+          <Route path="/wome" element={<Women />} />
+          <Route path="/kids" element={<Kids />} />
         </Routes>
     </>
   );

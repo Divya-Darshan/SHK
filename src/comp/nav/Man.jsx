@@ -51,7 +51,7 @@ function Man() {
                     <p className='price'>{product.price}</p>
                   </div>
                 </Link>
-                <button className='btn'>Add to Bag</button>
+
               </div>
             </div>
           ))}
