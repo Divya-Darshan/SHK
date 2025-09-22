@@ -1,6 +1,7 @@
 export const products = [
   
   { id: 1, name: "Black Textured Relaxed Fit Overshirt", price: "₹200", src: "https://cdn.shopify.com/s/files/1/0420/7073/7058/files/8e47f5aeb0bd10d1fe9860e059073025.jpg?v=1735972311&quality=80", category: "men" },
+  
   { id: 2, name: "Blue Textured Overshirt", price: "₹200", src: "https://cdn.shopify.com/s/files/1/0420/7073/7058/files/2a1984d1197b1385f2f7f9f434b9e1fe.jpg?v=1735972267&quality=80", category: "men" },
   { id: 3, name: "White Textured Relaxed Fit Overshirt", price: "₹200", src: "https://cdn.shopify.com/s/files/1/0420/7073/7058/files/dbab50349c62ca0d4361f6590ac5bc3c.jpg?v=1735972146&quality=80", category: "men" },
   { id: 4, name: "Beige Textured Relaxed Fit Overshirt", price: "₹200", src: "https://cdn.shopify.com/s/files/1/0420/7073/7058/files/7561ab8fc744d1943176e046af8cfba3.jpg?v=1735972179&quality=80", category: "men" },
