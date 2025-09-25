@@ -32,7 +32,8 @@ function CopyrightSection() {
         <div className="icon">
           <i className="ri-instagram-line"></i>
           <i className="ri-facebook-circle-line"></i>
-          <i className="ri-whatsapp-line"></i>
+<a href="https://wa.me/918122821300?text=mudikitu%20dress%20annupuda%20punda."
+   target="_blank" rel="noopener noreferrer"><i className="ri-whatsapp-line"></i></a>
         </div>
       </div>
 
