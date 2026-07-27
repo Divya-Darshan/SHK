@@ -5,7 +5,7 @@ An e-commerce platform built for **Harikrishna Textiles**, allowing users to bro
 ## 🚀 Deployment Status
 
 
-Hosted on **Netlify** — Continuous Deployment from `main` branch : 
+Hosted on **Netlify** Continuous Deployment from `main` branch : 
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/a3541dbc-d434-4255-aa52-1260bad8968c/deploy-status)](https://app.netlify.com/projects/shkfabrics/deploys)
 
