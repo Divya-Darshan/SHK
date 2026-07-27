@@ -58,8 +58,8 @@ harikrishna-textiles/
 
 ### Prerequisites
 
-- Node.js ≥ 18.x
-- npm ≥ 9.x
+- Node.js ≥ 18.0
+- npm ≥ 9.5
 
 
 ## 📦 Build for Production
